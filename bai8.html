@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Hàng</title>
+</head>
+<body>
+    <h1>Form đặt hàng online:</h1>
+    <table>
+        <tr>
+            <td>
+                <form id="buyerForm">
+                    <p>Thông tin người mua</p>
+                    <label for="fullName">Họ và tên:</label>
+                    <input type="text" id="fullName" name="fullName"><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br>
+                    <label for="phoneNumber">Điện thoại:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber"><br>
+                    <label for="address">Đại chỉ:</label>
+                    <input type="text" id="address" name="address"><br>
+                    <label for="orderDate">Ngày đặt:</label>
+                    <input type="date" id="orderDate" name="orderDate"><br>
+                    <label for="paymentMethod">Phương thức thanh toán:</label>
+                    <select id="paymentMethod" name="paymentMethod">
+                        <option value="cash">Tiền mặt</option>
+                        <option value="creditCard">Thẻ tín dụng</option>
+                        <option value="bankTransfer">Chuyển khoản</option>
+                    </select><br>
+                    <label for="billAddress">Đại chỉ:</label>
+                    <input type="text" id="billAddress" name="billAddress"><br>
+                    <input type="checkbox" id="sendEmail" name="sendEmail">
+                    <label for="sendEmail">Gửi mail cho tôi:</label>
+                </form>
+            </td>
+            <td>
+                <form id="receiverForm">
+                    <p>Thông tin người nhận</p>
+                    <label for="receiverFullName">Họ và tên:</label>
+                    <input type="text" id="receiverFullName" name="receiverFullName"><br>
+                    <label for="receiverEmail">Email:</label>
+                    <input type="email" id="receiverEmail" name="receiverEmail"><br>
+                    <label for="receiverPhoneNumber">Điện thoại:</label>
+                    <input type="tel" id="receiverPhoneNumber" name="receiverPhoneNumber"><br>
+                    <label for="receiverAddress">Đại chỉ:</label>
+                    <input type="text" id="receiverAddress" name="receiverAddress"><br>
+                    <label for="notes">Ghi chú:</label>
+                    <textarea id="notes" name="notes"></textarea><br>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <script>
+        const orderForm = document.getElementById("orderForm");
+        orderForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            let fullName = document.getElementById("fullName").value;
+            let email = document.getElementById("email").value;
+            let phoneNumber = document.getElementById("phoneNumber").value;
+            let address = document.getElementById("address").value;
+            let orderDate = document.getElementById("orderDate").value;
+            let paymentMethod = document.getElementById("paymentMethod").value;
+            let billAddress = document.getElementById("billAddress").value;
+            let sendEmail = document.getElementById("sendEmail").checked;
+            let receiverFullName = document.getElementById("receiverFullName").value;
+            let receiverEmail = document.getElementById("receiverEmail").value;
+            let receiverPhoneNumber = document.getElementById("receiverPhoneNumber").value;
+            let receiverAddress = document.getElementById("receiverAddress").value;
+            let notes = document.getElementById("notes").value;
+            console.log("Thông tin người mua:");
+            console.log("Họ và tên: " + fullName);
+            console.log("Email: " + email);
+            console.log("Điện thoại: " + phoneNumber);
+            console.log("Đại chỉ: " + address);
+            console.log("Ngày đặt: " + orderDate);
+            console.log("Phương thức thanh toán: " + paymentMethod);
+            console.log("Đại chỉ: " + billAddress);
+            console.log("Gửi mail: " + sendEmail);
+            console.log("Thông tin người nhận:");
+            console.log("Họ và tên: " + receiverFullName);
+            console.log("Email: " + receiverEmail);
+            console.log("Điện thoại: " + receiverPhoneNumber);
+            console.log("Đại chỉ: " + receiverAddress);
+            console.log("Ghi chú: " + notes);
+        });
+    </script>
+</body>
+</html>
